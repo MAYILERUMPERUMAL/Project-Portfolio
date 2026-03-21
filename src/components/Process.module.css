@@ -1,0 +1,12 @@
+/* src/components/Process.module.css */
+.section { padding: 100px 60px; background: var(--bg2); }
+.list { margin-top: 56px; position: relative; }
+.line { position: absolute; left: 28px; top: 28px; bottom: 28px; width: 1px; background: linear-gradient(to bottom, var(--accent), transparent); }
+.item { display: flex; gap: 32px; margin-bottom: 40px; position: relative; z-index: 1; }
+.item:last-child { margin-bottom: 0; }
+.num { width: 56px; height: 56px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 14px; font-weight: 600; color: var(--accent2); flex-shrink: 0; transition: all 0.3s; }
+.item:hover .num { background: var(--accent); border-color: var(--accent); color: #fff; }
+.content { padding-top: 10px; }
+.title { font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+.desc { font-size: 14px; color: var(--text2); line-height: 1.7; max-width: 480px; }
+@media (max-width: 900px) { .section { padding: 80px 24px; } }

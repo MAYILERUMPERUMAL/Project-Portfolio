@@ -1,0 +1,92 @@
+/* src/components/QuoteGenerator.module.css */
+.section { padding: 100px 60px; background: var(--bg3); }
+.layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; margin-top: 56px; align-items: start; }
+
+/* PREVIEW */
+.preview { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; position: sticky; top: 100px; }
+.previewHead { background: linear-gradient(135deg, var(--accent), rgba(124,106,247,0.6)); padding: 28px; }
+.devName { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+.devRole { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 2px; letter-spacing: 0.06em; }
+.qNum { float: right; text-align: right; margin-top: -44px; }
+.qNumLabel { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; }
+.qNumVal { font-family: 'Geist Mono', monospace; font-size: 14px; font-weight: 600; color: var(--gold2); }
+
+.previewBody { padding: 24px; }
+.pbSection { margin-bottom: 16px; }
+.pbLabel { font-size: 10px; color: var(--text3); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+.pbClient { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.pbMeta { font-size: 13px; color: var(--text2); }
+.divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+.itemsTable { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px; }
+.itemsTable th { text-align: left; padding: 6px 0; color: var(--text3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.itemsTable th:last-child { text-align: right; }
+.itemsTable td { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.03); color: var(--text2); }
+.itemsTable td:last-child { text-align: right; color: var(--text); font-family: 'Geist Mono', monospace; }
+.itName { color: var(--text) !important; font-weight: 500; }
+.emptyRow { color: var(--text3) !important; font-size: 12px; }
+
+.advLine { background: rgba(124,106,247,0.08); border: 1px solid rgba(124,106,247,0.15); border-radius: 8px; padding: 10px 14px; font-size: 12px; color: var(--accent2); margin-bottom: 12px; }
+.totalLine { display: flex; justify-content: space-between; align-items: center; padding: 14px 0 0; border-top: 1px solid var(--border); }
+.totalTxt { font-size: 13px; color: var(--text2); }
+.totalVal { font-size: 26px; font-weight: 900; color: var(--text); letter-spacing: -0.03em; }
+
+.previewFoot { background: rgba(255,255,255,0.02); border-top: 1px solid var(--border); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+.footNote { font-size: 11px; color: var(--text3); }
+.status { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text3); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 100px; transition: all 0.3s; }
+.statusReady { background: rgba(52,211,153,0.1); border-color: rgba(52,211,153,0.2); color: var(--green); }
+
+/* FORM */
+.form { display: flex; flex-direction: column; gap: 16px; }
+.formSection { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; }
+.formTitle { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.fsIcon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; background: rgba(124,106,247,0.1); }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fgroup { display: flex; flex-direction: column; gap: 5px; }
+.full { grid-column: 1 / -1; }
+.fgroup label { font-size: 12px; font-weight: 500; color: var(--text2); }
+.fgroup input, .fgroup select, .fgroup textarea {
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 10px;
+  padding: 10px 14px; font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 14px; color: var(--text); outline: none;
+  transition: border-color 0.2s, background 0.2s; width: 100%;
+}
+.fgroup input::placeholder, .fgroup textarea::placeholder { color: var(--text3); }
+.fgroup input:focus, .fgroup select:focus, .fgroup textarea:focus { border-color: rgba(124,106,247,0.5); background: rgba(124,106,247,0.04); }
+.fgroup select option { background: #1a1a28; color: var(--text); }
+.fgroup textarea { resize: vertical; min-height: 80px; }
+
+.checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+.checkItem {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 12px; cursor: pointer;
+  transition: all 0.2s; user-select: none; font-size: 13px; color: var(--text2);
+}
+.checkItem:hover { border-color: rgba(124,106,247,0.4); }
+.checkItem input[type=checkbox] { accent-color: var(--accent); width: 14px; height: 14px; }
+
+.btnGen {
+  width: 100%; padding: 15px; background: var(--accent); color: #fff;
+  font-family: 'Cabinet Grotesk', sans-serif; font-size: 15px; font-weight: 700;
+  border: none; border-radius: 12px; cursor: pointer;
+  transition: all 0.25s; letter-spacing: 0.01em;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btnGen:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(124,106,247,0.3); }
+.btnPdf {
+  width: 100%; padding: 13px; background: transparent; color: var(--text2);
+  font-family: 'Cabinet Grotesk', sans-serif; font-size: 14px; font-weight: 500;
+  border: 1px solid var(--border); border-radius: 12px; cursor: pointer;
+  transition: all 0.2s; margin-top: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btnPdf:hover { border-color: var(--text2); color: var(--text); }
+
+@media (max-width: 900px) {
+  .section { padding: 80px 24px; }
+  .layout { grid-template-columns: 1fr; }
+  .preview { position: static; }
+  .frow { grid-template-columns: 1fr; }
+  .checks { grid-template-columns: 1fr; }
+}

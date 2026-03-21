@@ -1,0 +1,82 @@
+/* src/components/Hero.module.css */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 120px 60px 80px;
+  position: relative; overflow: hidden;
+}
+.heroBg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 600px 600px at 20% 50%, rgba(124,106,247,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 80% 20%, rgba(232,197,109,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 300px 300px at 70% 80%, rgba(52,211,153,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.heroGrid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+  pointer-events: none;
+}
+.heroInner { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(124,106,247,0.1);
+  border: 1px solid rgba(124,106,247,0.25);
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 12px; font-weight: 500; color: var(--accent2);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.title {
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 900; line-height: 0.95;
+  letter-spacing: -0.04em; margin-bottom: 12px;
+}
+.name {
+  display: block;
+  background: linear-gradient(135deg, var(--text) 0%, var(--text2) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.role {
+  display: block;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic; font-weight: 400;
+  color: var(--accent2); -webkit-text-fill-color: var(--accent2);
+  font-size: 0.7em;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
+.techTag {
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text2); font-size: 12px; font-weight: 500;
+  padding: 5px 14px; border-radius: 100px;
+  font-family: 'Geist Mono', monospace;
+  transition: border-color 0.2s, color 0.2s;
+}
+.techTag:hover { border-color: var(--accent); color: var(--accent2); }
+.desc {
+  font-size: 18px; color: var(--text2);
+  max-width: 520px; line-height: 1.7;
+  margin: 28px 0 44px; font-weight: 400;
+}
+.actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.stats {
+  display: flex; gap: 40px; margin-top: 72px; padding-top: 40px;
+  border-top: 1px solid var(--border); flex-wrap: wrap;
+}
+.statNum {
+  font-size: 36px; font-weight: 900; letter-spacing: -0.03em; color: var(--text);
+}
+.statNum span { color: var(--accent2); }
+.statLabel { font-size: 13px; color: var(--text3); margin-top: 2px; }
+
+@media (max-width: 900px) {
+  .hero { padding: 100px 24px 60px; }
+  .title { font-size: 2.8rem; }
+  .stats { gap: 24px; }
+}

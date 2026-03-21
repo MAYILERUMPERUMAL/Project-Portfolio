@@ -1,0 +1,46 @@
+/* src/components/Navbar.module.css */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 0.4s, backdrop-filter 0.4s, border-bottom 0.4s;
+}
+.scrolled {
+  background: rgba(10,10,15,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-size: 15px; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--text); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.logoDot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); display: inline-block;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124,106,247,0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(124,106,247,0); }
+}
+.links { display: flex; gap: 4px; }
+.links a {
+  font-size: 13px; color: var(--text2); text-decoration: none;
+  padding: 7px 16px; border-radius: 100px;
+  transition: color 0.2s, background 0.2s; letter-spacing: 0.02em;
+}
+.links a:hover { color: var(--text); background: var(--surface); }
+.cta {
+  font-size: 13px; font-weight: 500;
+  background: var(--accent); color: #fff;
+  padding: 8px 20px; border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s; letter-spacing: 0.02em;
+}
+.cta:hover { background: var(--accent2); transform: translateY(-1px); }
+
+@media (max-width: 900px) {
+  .nav { padding: 16px 24px; }
+  .links { display: none; }
+}
