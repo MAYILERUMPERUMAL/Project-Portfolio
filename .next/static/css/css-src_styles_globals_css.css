@@ -1,0 +1,139 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/styles/globals.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/* src/styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #0f0f18;
+  --bg3: #14141f;
+  --surface: #1a1a28;
+  --surface2: #1e1e30;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #f0eee8;
+  --text2: #9896a4;
+  --text3: #5a5868;
+  --accent: #7c6af7;
+  --accent2: #a594f9;
+  --gold: #e8c56d;
+  --gold2: #f5d78e;
+  --green: #34d399;
+  --pink: #f472b6;
+  --glow: rgba(124,106,247,0.15);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+
+/* SHARED BUTTON STYLES */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: #fff;
+  padding: 14px 28px; border-radius: 12px;
+  font-size: 15px; font-weight: 600;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.25s; letter-spacing: 0.01em;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+.btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(124,106,247,0.35); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--surface); color: var(--text);
+  padding: 14px 28px; border-radius: 12px;
+  font-size: 15px; font-weight: 500;
+  text-decoration: none; border: 1px solid var(--border2); cursor: pointer;
+  transition: all 0.25s;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+.btn-secondary:hover { background: var(--surface2); border-color: rgba(255,255,255,0.2); }
+
+/* SHARED SECTION STYLES */
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent2); margin-bottom: 16px;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px;
+}
+.section-sub { font-size: 16px; color: var(--text2); max-width: 500px; line-height: 1.7; }
+
+/* ANIMATIONS */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124,106,247,0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(124,106,247,0); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); display: inline-block;
+  animation: blink 1.5s infinite;
+}
+
+@media print {
+  nav, #services, #packages, #process, .qform, .btn-gen, .btn-pdf, footer { display: none !important; }
+  .quote-layout { grid-template-columns: 1fr; }
+  body { background: #fff; color: #000; }
+}
+
+@media (max-width: 900px) {
+  body { cursor: auto; }
+  #cursor, #cursor-ring { display: none; }
+}
+
